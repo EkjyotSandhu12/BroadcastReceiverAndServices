@@ -23,6 +23,6 @@ public class MyReceiver extends BroadcastReceiver {
             Toast.makeText(context, "Time Zone Changed", Toast.LENGTH_SHORT).show();
 
         if(intent.getAction().equals("CUSTOM_BROADCAST"))
-            Toast.makeText(context, intent.getStringExtra("message"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,"same app " + " msg: " + intent.getStringExtra("message"),Toast.LENGTH_SHORT).show();
     }
 }

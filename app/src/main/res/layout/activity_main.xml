@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
@@ -29,25 +36,84 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="3) SENDING Broadcast to other apps "/>
+        android:text="3) creating implicit broadcast, any app can access and react (dynamic receiver) "/>
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="send text"
         android:onClick="sendBroadCast" />
+      <EditText
+          android:id="@+id/broadcasttext"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:hint="ENTER TEXT"
+          android:text="TEST"/>
+  </LinearLayout>
 
     <TextView
         android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="4) SENDING Broadcast to specific broadcast Receiver"/>
+        android:text="4) SENDING CUSTOM EXPLICIT Broadcast to specific broadcast Receiver (same app)"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="send text"
-        android:onClick="SendSpecificBroadcast" />
+        android:text="send"
+        android:onClick="ExplictBroadcast" />
 
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="5) SENDING CUSTOM EXPLICIT Broadcast to specific broadcast Receiver (another package app)"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send (package)"
+        android:onClick="ExplictAnotherAppBroadcast" />
 
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="6) Priority and Ordered Broadcasting (another app)"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send (package)"
+        android:onClick="priortyBroadcasting" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="7) Local Broad Cast -> "/>
+
+    <TextView
+        android:id="@+id/localText"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="YOUR TEXT"/>
+</LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start"
+        android:onClick="StartLocalBroadCast" />
 
 </LinearLayout>
+</ScrollView>

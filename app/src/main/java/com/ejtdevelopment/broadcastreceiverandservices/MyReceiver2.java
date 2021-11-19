@@ -10,7 +10,7 @@ public class MyReceiver2 extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        if("EXAMPLE_ACTION".equals(intent.getAction()))
+      //  if("EXAMPLE_ACTION".equals(intent.getAction()))
         Toast.makeText(context, "Triggered specific braodcast", Toast.LENGTH_SHORT).show();
 
     }

@@ -9,14 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BroadcastReceiverAndServices">
+        <activity
+            android:name=".LocalBroadCastSender"
+            android:exported="false" />
+
         <receiver
             android:name=".MyReceiver2"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="EXAMPLE_ACTION"/>
-            </intent-filter>
-        </receiver>
+            android:exported="true"></receiver>
 
         <activity
             android:name=".MainActivity"
