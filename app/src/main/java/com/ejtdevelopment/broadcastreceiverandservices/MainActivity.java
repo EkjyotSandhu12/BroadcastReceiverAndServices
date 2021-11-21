@@ -23,6 +23,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView tv;
     EditText textMsg;
     MyReceiver myReceiver = new MyReceiver();
     LocalBroadcastManager manager;
@@ -31,29 +32,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        manager = LocalBroadcastManager.getInstance(this);
         textMsg = findViewById(R.id.broadcasttext);
+        tv = findViewById(R.id.localText);
 
         IntentFilter IF = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION); //Dynamic BroadCaster
         IF.addAction("CUSTOM_BROADCAST"); //adding custom broadcast to intent receiver
         registerReceiver(myReceiver, IF); //Registering broadcaste
 
-
-
-        manager.registerReceiver(LocalBroadcastReceiver,new IntentFilter("LOCAL_BROADCAST"));
-
+        LocalBroadcastManager.getInstance(this).registerReceiver(LocalBroadcastReceiver,new IntentFilter("LOCAL_BROADCAST"));
     }
-
 
     BroadcastReceiver LocalBroadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-
-            Intent activity = new Intent(context, MainActivity.class);
-            startActivity(activity);
             Toast.makeText(context, intent.getStringExtra("value"), Toast.LENGTH_SHORT).show();
-            TextView tv = findViewById(R.id.localText); // incomplete
+            tv.setText(intent.getStringExtra("value"));
         }
     };
 

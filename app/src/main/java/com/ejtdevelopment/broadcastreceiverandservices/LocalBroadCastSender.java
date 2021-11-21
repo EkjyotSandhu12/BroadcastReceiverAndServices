@@ -25,7 +25,9 @@ public class LocalBroadCastSender extends AppCompatActivity {
                 Intent intent = new Intent("LOCAL_BROADCAST");
                 intent.putExtra("value", localText.getText().toString());
                 manager.sendBroadcast(intent);
+                finish();
             }
+
         });
     }
 }
