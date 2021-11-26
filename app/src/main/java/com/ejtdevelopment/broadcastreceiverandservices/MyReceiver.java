@@ -11,7 +11,9 @@ public class MyReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        if(intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION)){
+        Toast.makeText(context, intent.getStringExtra("msg"), Toast.LENGTH_SHORT).show();
+
+        if(ConnectivityManager.CONNECTIVITY_ACTION.equals(intent.getAction())){
 
             Boolean disconnected = intent.getBooleanExtra(ConnectivityManager.EXTRA_NO_CONNECTIVITY, false);
             if(disconnected) Toast.makeText(context, "DISCONNECTED", Toast.LENGTH_SHORT).show();
@@ -19,10 +21,10 @@ public class MyReceiver extends BroadcastReceiver {
                 Toast.makeText(context, "CONNECTED", Toast.LENGTH_SHORT).show();
             }
 
-        if (intent.getAction().equals(Intent.ACTION_TIMEZONE_CHANGED))
+        if (Intent.ACTION_TIMEZONE_CHANGED.equals(intent.getAction()))
             Toast.makeText(context, "Time Zone Changed", Toast.LENGTH_SHORT).show();
 
-        if(intent.getAction().equals("CUSTOM_BROADCAST"))
+        if("CUSTOM_BROADCAST".equals(intent.getAction()))
             Toast.makeText(context,"same app " + " msg: " + intent.getStringExtra("message"),Toast.LENGTH_SHORT).show();
     }
 }

@@ -18,7 +18,7 @@ public class JobSchedulerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_scheduler);
     }
-
+    // With Android 5.0 (API level 21) and later, you can start a service with JobScheduler
     public void scheduleJob(View view) {
         ComponentName componentName = new ComponentName(this, JobSchedulerService.class); // component name is used to identify a component
         JobInfo info = new JobInfo.Builder(123, componentName) // job id to identify the job service and component of service

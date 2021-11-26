@@ -3,7 +3,7 @@
     package="com.ejtdevelopment.broadcastreceiverandservices">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -12,8 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BroadcastReceiverAndServices">
+
         <activity
-            android:name=".JobSchedulerActivity"
+            android:name=".NotificationActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".JobSchedulerActivity"
+            android:exported="true">
+
+        </activity>
+
         <activity
             android:name=".LocalBroadCastSender"
             android:exported="false" />
@@ -31,9 +39,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
 
         <receiver
             android:name=".MyReceiver"
@@ -44,9 +50,9 @@
             </intent-filter>
         </receiver>
 
-        <service android:name=".JobSchedulerService"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
-
+        <service
+            android:name=".JobSchedulerService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>

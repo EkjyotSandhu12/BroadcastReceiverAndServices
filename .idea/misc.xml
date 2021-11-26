@@ -7,6 +7,9 @@
         <entry key="..\:/Users/monty/AndroidStudioProjects/BroadcastReceiverAndServices/app/src/main/res/layout/activity_local_broad_cast_receiver.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/monty/AndroidStudioProjects/BroadcastReceiverAndServices/app/src/main/res/layout/activity_local_broad_cast_sender.xml" value="0.1921875" />
         <entry key="..\:/Users/monty/AndroidStudioProjects/BroadcastReceiverAndServices/app/src/main/res/layout/activity_main.xml" value="0.365625" />
+        <entry key="..\:/Users/monty/AndroidStudioProjects/BroadcastReceiverAndServices/app/src/main/res/layout/activity_notification.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/monty/AndroidStudioProjects/BroadcastReceiverAndServices/app/src/main/res/layout/activity_notification_channel.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/monty/AndroidStudioProjects/BroadcastReceiverAndServices/app/src/main/res/layout/content_notification_channel.xml" value="0.18020833333333333" />
       </map>
     </option>
   </component>

@@ -47,16 +47,16 @@ public class JobSchedulerService  extends JobService { // jobservices are use to
 
                 }
 
-                jobFinished(params, false); //wantsReschedule even after finished successfullu
+                jobFinished(params, false); //wantsReschedule even after finished successfully
+                Log.d(TAG, "Job Finished");
             }
         }).start();
-        Log.d(TAG, "Job Finished");
+
     }
 
     @Override
     public boolean onStopJob(JobParameters jobParameters) { //job has been cancelled before jobFinished() has been called
-                                 //scheduler.cancel(); has been called through Activity, that doesnt stop the jobService
-
+                                 //scheduler.cancel(); has been called through Activity, that doesnt stop the jobService soo we have to make jobCancelled = true
         /*
         This method is called if the system has determined that you must stop execution of your job even before
         you've had a chance to call jobFinished(). Once this method is called, you no longer need
