@@ -20,29 +20,14 @@ import android.widget.Toast;
 public class NotificationActivity extends AppCompatActivity {
 
     public static final String CHANNEL_1 = "channel1";
-    public static final String CHANNEL_2 = "channel2";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
 
-        CreateChannel(); // after api 26 we need to create channel for each notification
     }
 
-    void CreateChannel(){
-
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){ // check if the version of the system is greater than api level 26
-        // you can write this code, in class extending application class to apply it globally
-            NotificationChannel channel1 = new NotificationChannel(
-                    CHANNEL_1,
-                    "name: channel 1",
-                    NotificationManager.IMPORTANCE_HIGH);
-            channel1.setDescription("description: this is channel 1");
-            getSystemService(NotificationManager.class).createNotificationChannel(channel1); // add it to the channel
-        }
-    }
 
     public void channel1(View view) {
 
