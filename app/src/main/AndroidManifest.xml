@@ -16,11 +16,7 @@
         <activity
             android:name=".ForegroundServiceActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".NotificationActivity"
@@ -29,7 +25,13 @@
         </activity>
         <activity
             android:name=".JobSchedulerActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".LocalBroadCastSender"
             android:exported="false" />
@@ -53,9 +55,9 @@
 
         <service
             android:name=".JobSchedulerService"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
 
-        <service android:name=".ExampleService"/>
+        <service android:name=".ForegroundService"/>
 
     </application>
 

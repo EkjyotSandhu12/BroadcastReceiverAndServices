@@ -16,7 +16,7 @@ public class ForegroundServiceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foreground_service);
 
-        intent = new Intent(this, ExampleService.class);
+        intent = new Intent(this, ForegroundService.class);
         intent.putExtra("msg", "Foreground Service");
     }
 

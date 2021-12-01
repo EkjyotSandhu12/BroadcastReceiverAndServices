@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
-public class ExampleService extends Service {
+public class ForegroundService extends Service {
 
     Notification notification;
 
@@ -47,9 +47,9 @@ public class ExampleService extends Service {
 
               /*
                 These constants define what happens when the system kills our service
-                NOT_STICKY means our service will just be gone and not started again
-                STICKY means the system will restart our service as soon as possible but the intent we passed to it will be null
-                REDELIVER_INTENT means it will be started it again
+                -NOT_STICKY means our service will just be gone and not started again
+                -STICKY means the system will restart our service as soon as possible but the intent we passed to it will be null
+                -REDELIVER_INTENT means it will be started it again
               */
     }
 
